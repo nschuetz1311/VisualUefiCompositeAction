@@ -1,0 +1,14 @@
+name: 'Environment setup'
+description: this action sets up the environment needed to build visual uefi applications.
+runs-on: windows-latest
+defaults:
+  run:
+    shell: cmd
+runs:
+  using: composite
+  steps:
+    - name: Add VisualStudio to PATH
+      uses: seanmiddleditch/gha-setup-vsdevenv@v4
+    - name: Add NASM to PATH
+      uses: ilammy/setup-nasm@v1.3.0
+
